@@ -1,0 +1,47 @@
+!@credentials wazuh
+
+root
+C1sc0123
+systemctl stop firewalld
+ip addr
+
+GUI:
+admin
+C1sc0123..
+
+
+
+ir-elastic credentials:
+root
+C1sc0123
+
+systemctl start elasticsearch.service
+ip addr
+
+
+
+f1k configs
+int g1
+no shut
+ip addr dhcp
+end
+
+// login on
+conf t
+login on-failure log
+login on-success log
+end
+
+// logs the ongoing config
+conf t
+archive
+log config
+notif syslog
+end
+
+
+zabbix creds
+root
+zabbix
+
+dnf install net-snmp-utils -y
